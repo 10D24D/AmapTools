@@ -18,7 +18,7 @@ AmapTools 是一款 Tampermonkey 用户脚本，用于拦截高德地图（驾�
 
 ### 2. 安装 AmapTools
 
-- 直接从 GreasyFork 安装：[AmapTools - GreasyFork]([https://greasyfork.org/](https://greasyfork.org/zh-CN/scripts/507634-amaptools))
+- 直接从 GreasyFork 安装：[AmapTools - GreasyFork](https://greasyfork.org/zh-CN/scripts/507634-amaptools)
 - 或者从 GitHub 安装：[AmapTools - GitHub](https://github.com/10D24D/AmapTools)
 
 ### 3. 支持的网站
@@ -59,4 +59,4 @@ MIT License. 你可以自由使用、修改和分发本项目的代码。
 
 ---
 
-> 如果你喜欢这个工具，请在 GreasyFork 或 GitHub 上给个 ⭐️ Star！
+> 如果你喜欢这个工具，请在 GitHub 上给个 ⭐️ Star！
