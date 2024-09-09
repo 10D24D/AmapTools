@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AmapTools
 // @description  一款高德地图扩展工具。拦截高德地图（驾车、公交、步行）路线规划接口数据，将其转换成GeoJSON格式数据，并提供复制和下载。
-// @version      1.0.0
+// @version      1.0.2
 // @author       DD1024z
 // @namespace    https://github.com/10D24D/AmapTools/
 // @supportURL   https://github.com/10D24D/AmapTools/
@@ -121,7 +121,6 @@
                             }
                         };
                     }
-
                 }
             });
         });
@@ -531,4 +530,33 @@
         link.click();
         document.body.removeChild(link);
     }
+
+    // AmapLoginAssist - 高德地图支持密码登录、三方登录
+    // [clone from MIT code](https://greasyfork.org/zh-CN/scripts/477376-amaploginassist-%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%E6%94%AF%E6%8C%81%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95-%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95)
+    let pollCount = 0;
+    let intervalID = setInterval(() => {
+        try {
+            pollCount++;
+            if (pollCount > 50) {
+                clearInterval(intervalID);
+                return;
+            }
+
+            //
+            if (window.passport && window.passport.config) {
+                clearInterval(intervalID);
+                window.passport.config({
+                    loginMode: ["password", "message", "qq", "sina", "taobao", "alipay", "subAccount", "qrcode"],
+                    loginParams: {
+                        dip: 20303
+                    }
+                });
+                window.passport.config = () => { };
+            }
+
+        } catch (e) {
+            console.error(e)
+            clearInterval(intervalID);
+        }
+    }, 100);
 })();
